@@ -1,0 +1,236 @@
+will not go quietly · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Will Not Go Quietly — Armarium Vitae</title>
+  <meta name="description" content="The city is always under siege. The question is always the same: is anyone coming?">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --text-primary: #1a1a18;
+      --text-secondary: #5a5a54;
+      --text-tertiary: #9a9a92;
+      --border: rgba(0,0,0,0.12);
+    }
+ 
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-primary: #f0ede6;
+        --text-secondary: #a8a49c;
+        --text-tertiary: #6a6660;
+        --border: rgba(255,255,255,0.12);
+      }
+      body { background: #141412; }
+    }
+ 
+    body {
+      background: #faf9f6;
+      color: var(--text-primary);
+      font-family: 'EB Garamond', Georgia, serif;
+      min-height: 100vh;
+    }
+ 
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2.5rem 3rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+ 
+    .site-name {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+ 
+    .site-name:hover { color: var(--text-primary); }
+ 
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+ 
+    nav a {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      border-bottom: 0.5px solid transparent;
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+ 
+    nav a:hover {
+      color: var(--text-primary);
+      border-color: var(--border);
+    }
+ 
+    article {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+    }
+ 
+    .essay-meta {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 2rem;
+    }
+ 
+    .essay-meta a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+ 
+    .essay-meta a:hover { color: var(--text-secondary); }
+ 
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 3rem;
+      color: #18180f;
+    }
+ 
+    .rule {
+      width: 1px;
+      height: 40px;
+      background: var(--text-tertiary);
+      margin: 0 0 3rem 0;
+      opacity: 0.3;
+    }
+ 
+    .essay-body p {
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 1.65em;
+    }
+ 
+    .essay-body p:last-child {
+      margin-bottom: 0;
+    }
+ 
+    .essay-body em { font-style: italic; }
+ 
+    .essay-footer {
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+ 
+    .back-link {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+ 
+    .back-link:hover { color: var(--text-primary); }
+ 
+    .essay-copyright {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--text-tertiary);
+      opacity: 0.7;
+    }
+ 
+    footer {
+      padding: 2.5rem 3rem;
+      border-top: 0.5px solid var(--border);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-align: center;
+      opacity: 0.55;
+      line-height: 2;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="site-name">Armarium Vitae</a>
+    <nav>
+      <a href="./">Essays</a>
+      <a href="mailto:elizabeth@armariumvitae.com">Inquiries</a>
+    </nav>
+  </header>
+ 
+  <article>
+    <p class="essay-meta"><a href="./">Essays</a> &nbsp;&middot;&nbsp; April 2026</p>
+    <h1>I Will Not Go Quietly</h1>
+    <div class="rule"></div>
+ 
+    <div class="essay-body">
+      <p>We are a people adrift. We fall for the shallow because we no longer believe in the deep. We touch something larger than ourselves — feel the wonder of it, the resonance — and then we back away to find the next shining thing. There are problems enough, and bad actors in abundance. But we would never hear their siren call if we were holding what our ancestors bled to hand us. The drift didn't happen overnight. It happened choice by choice, each surrender small enough to seem reasonable, each substitution promising convenience in exchange for something we didn't know we needed. We have arrived somewhere our ancestors would not recognize, governed by institutions that regard us less as citizens than as resources to be allocated and risks to be managed. This is not new. It is only more visible now — and visibility is either the beginning of recovery or the last light before dark.</p>
+ 
+      <p>We are alive today because they fought. Not abstractly, not for ideology, but for something specific and beloved — for the child at home, for the city at their backs, for the civilization that made the child and the city possible. They held the wall. They rode to the relief. They went into captivity and came back. And they did it so that we could be here, in this moment, making choices about what we hand forward.</p>
+ 
+      <p>We are not holding it.</p>
+ 
+      <p>Consider the silence.</p>
+ 
+      <p>The universe is old beyond comprehension and vast beyond imagining. By every reasonable calculation it should be loud with the signals of other civilizations — other peoples who looked up, wondered, reached outward. And yet we hear nothing. This is the Fermi paradox, and it has many proposed solutions, most of them uncomfortable. Perhaps the distances are simply too great. Perhaps we aren't listening correctly. Perhaps we are genuinely alone.</p>
+ 
+      <p>Or perhaps civilizations reliably fail to hold what they build.</p>
+ 
+      <p>Perhaps the drift we are describing is not a uniquely modern pathology but a recurring one — the terminal phase of peoples who touched something deep, felt the resonance, and backed away one choice at a time until there was nothing left worth transmitting. Until they went quiet. Not with a bang, not conquered from without, but hollowed from within. Institutions that forgot their purpose. Stories that stopped being told. Children who never learned what their ancestors held, or why, or what it cost.</p>
+ 
+      <p>The universe may be a graveyard of almost-civilizations. People who got far enough to wonder and not far enough to last.</p>
+ 
+      <p>I will not go quietly into that silence. And I do not think you will either — or you would not be in this room.</p>
+ 
+      <p>In September of 1683, the city of Vienna had been under siege for two months. The Ottoman army — three hundred thousand strong by some accounts — had been mining the walls, collapsing bastions, pushing the perimeter inward day by day. Inside the city, Commander Ernst Rüdiger von Starhemberg sent signal rockets up every night from the cathedral tower. Not in celebration. In desperation. Asking a question into the dark: is anyone coming?</p>
+ 
+      <p>Someone was coming.</p>
+ 
+      <p>Jan Sobieski, King of Poland, was riding south with the largest cavalry charge in recorded history. Eighty thousand men. At the crest of the Kahlenberg, looking down at the Ottoman encampment spread across the plain below Vienna, he paused. Then he rode.</p>
+ 
+      <p>I am writing a historical novel through the eyes of two fictional brothers who were there. One is a page to Starhemberg, inside the walls, watching the city slowly consume itself — the horses eaten, the dead buried in cellars, the signal rockets going up into a sky that did not answer. The other rides in Sobieski's retinue, moving toward a city he doesn't know is still standing, toward a brother he doesn't know is still alive, at what must have seemed to be a snail's pace.</p>
+ 
+      <p>They are boys. They are watching great men do the impossible. They are small and frightened and doing their part in what ways they can. They are simply there, holding what their civilization handed them, doing what the moment requires.</p>
+ 
+      <p>This is not a history lesson. It is a mirror. The city is always under siege. The question is always the same: is anyone coming? And the answer has always depended entirely on whether someone, somewhere, decided to ride.</p>
+    </div>
+ 
+    <div class="essay-footer">
+      <a href="./" class="back-link">&larr; All Essays</a>
+      <span class="essay-copyright">&copy; Elizabeth Burdine 2026</span>
+    </div>
+  </article>
+ 
+  <footer>
+    &copy; Elizabeth Burdine 2026 &nbsp;&middot;&nbsp; Dallas, Texas
+  </footer>
+</body>
+</html>
