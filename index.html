@@ -65,14 +65,14 @@
       margin-bottom: 2.5rem;
     }
 
-   h1 {
-  font-size: clamp(2.4rem, 6vw, 3.6rem);
-  font-weight: 500;
-  text-align: center;
-  line-height: 1.12;
-  letter-spacing: -0.01em;
-  color: #18180f;
-}
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 500;
+      text-align: center;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      color: #18180f;
+    }
 
     h1 em { font-style: italic; }
 
@@ -122,12 +122,36 @@
       color: var(--text-tertiary);
     }
 
+    nav {
+      display: flex;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    nav a {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      border-bottom: 0.5px solid transparent;
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+      border-color: var(--border);
+    }
+
     .contact {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 12px;
       letter-spacing: 0.06em;
       color: var(--text-tertiary);
       text-align: center;
+      margin-bottom: 2rem;
     }
 
     .contact a {
@@ -141,7 +165,7 @@
     .contact a:hover { color: var(--text-primary); }
 
     footer {
-      margin-top: 4rem;
+      margin-top: 2rem;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 10px;
       letter-spacing: 0.18em;
@@ -149,6 +173,7 @@
       color: var(--text-tertiary);
       text-align: center;
       opacity: 0.55;
+      line-height: 2;
     }
   </style>
 </head>
@@ -160,13 +185,24 @@
     <div class="rule"></div>
     <p class="tagline">This is a part of the New World,<br>which is a revisit of the best of the Old.</p>
     <p class="body">A protected house for manuscripts, histories, and the stories that form boys into men — kept whole against fragmentation, offered forward to those who seek them.</p>
+
     <div class="divider">
       <div class="divider-line"></div>
       <span class="divider-glyph">✦</span>
       <div class="divider-line"></div>
     </div>
-    <p class="contact">Inquiries &rarr; <a href="mailto:elizabeth@armariumvitae.com">elizabeth@armariumvitae.com</a></p>
-    <footer>Est. MMXXVI &nbsp;&middot;&nbsp; Dallas, Texas</footer>
+
+    <nav>
+      <a href="essays/">Essays</a>
+      <a href="mailto:elizabeth@armariumvitae.com">Inquiries</a>
+    </nav>
+
+    <p class="contact"><a href="mailto:elizabeth@armariumvitae.com">elizabeth@armariumvitae.com</a></p>
+
+    <footer>
+      Est. MMXXVI &nbsp;&middot;&nbsp; Dallas, Texas<br>
+      &copy; Elizabeth Burdine 2026
+    </footer>
   </main>
 </body>
 </html>
