@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essays — Armarium Vitae</title>
+  <meta name="description" content="Essays from Armarium Vitae — a repository of living things.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --text-primary: #1a1a18;
+      --text-secondary: #5a5a54;
+      --text-tertiary: #9a9a92;
+      --border: rgba(0,0,0,0.12);
+    }
+ 
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-primary: #f0ede6;
+        --text-secondary: #a8a49c;
+        --text-tertiary: #6a6660;
+        --border: rgba(255,255,255,0.12);
+      }
+      body { background: #141412; }
+    }
+ 
+    body {
+      background: #faf9f6;
+      color: var(--text-primary);
+      font-family: 'EB Garamond', Georgia, serif;
+      min-height: 100vh;
+    }
+ 
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2.5rem 3rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+ 
+    .site-name {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+ 
+    .site-name:hover { color: var(--text-primary); }
+ 
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+ 
+    nav a {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      border-bottom: 0.5px solid transparent;
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+ 
+    nav a:hover, nav a.active {
+      color: var(--text-primary);
+      border-color: var(--border);
+    }
+ 
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+    }
+ 
+    .page-label {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 3rem;
+    }
+ 
+    .essay-list {
+      list-style: none;
+    }
+ 
+    .essay-item {
+      padding: 2.5rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+ 
+    .essay-item:first-child {
+      border-top: 0.5px solid var(--border);
+    }
+ 
+    .essay-date {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 0.75rem;
+    }
+ 
+    .essay-title {
+      font-size: clamp(1.3rem, 3vw, 1.65rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+ 
+    .essay-title a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+ 
+    .essay-title a:hover { color: var(--text-secondary); }
+ 
+    .essay-title em { font-style: italic; }
+ 
+    .essay-pull {
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+ 
+    .essay-read {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+ 
+    .essay-read:hover { color: var(--text-primary); }
+ 
+    footer {
+      margin-top: 6rem;
+      padding: 2.5rem 3rem;
+      border-top: 0.5px solid var(--border);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-align: center;
+      opacity: 0.55;
+      line-height: 2;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="../" class="site-name">Armarium Vitae</a>
+    <nav>
+      <a href="./" class="active">Essays</a>
+      <a href="mailto:elizabeth@armariumvitae.com">Inquiries</a>
+    </nav>
+  </header>
+ 
+  <main>
+    <p class="page-label">Essays</p>
+ 
+    <ul class="essay-list">
+ 
+      <li class="essay-item">
+        <p class="essay-date">April 2026</p>
+        <h2 class="essay-title"><a href="sanctioned.html">Sanctioned</a></h2>
+        <p class="essay-pull">The institution didn't hold theirs. That betrayal is real. Grieve it if you need to. But do not let it become a waiting room.</p>
+        <a href="sanctioned.html" class="essay-read">Read &rarr;</a>
+      </li>
+ 
+      <li class="essay-item">
+        <p class="essay-date">April 2026</p>
+        <h2 class="essay-title"><a href="i-will-not-go-quietly.html"><em>I Will Not Go Quietly</em></a></h2>
+        <p class="essay-pull">The city is always under siege. The question is always the same: is anyone coming? And the answer has always depended entirely on whether someone, somewhere, decided to ride.</p>
+        <a href="i-will-not-go-quietly.html" class="essay-read">Read &rarr;</a>
+      </li>
+ 
+    </ul>
+  </main>
+ 
+  <footer>
+    &copy; Elizabeth Burdine 2026 &nbsp;&middot;&nbsp; Dallas, Texas
+  </footer>
+</body>
+</html>
