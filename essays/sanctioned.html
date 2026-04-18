@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Essays — Armarium Vitae</title>
-  <meta name="description" content="Essays from Armarium Vitae — a repository of living things.">
+  <title>Sanctioned — Armarium Vitae</title>
+  <meta name="description" content="Stop sending the application. Start studying the wreckage. Someone is coming. It might as well be you.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
     :root {
       --text-primary: #1a1a18;
       --text-secondary: #5a5a54;
       --text-tertiary: #9a9a92;
       --border: rgba(0,0,0,0.12);
     }
-
+ 
     @media (prefers-color-scheme: dark) {
       :root {
         --text-primary: #f0ede6;
@@ -27,14 +27,14 @@
       }
       body { background: #141412; }
     }
-
+ 
     body {
       background: #faf9f6;
       color: var(--text-primary);
       font-family: 'EB Garamond', Georgia, serif;
       min-height: 100vh;
     }
-
+ 
     .site-header {
       display: flex;
       justify-content: space-between;
@@ -42,7 +42,7 @@
       padding: 2.5rem 3rem;
       border-bottom: 0.5px solid var(--border);
     }
-
+ 
     .site-name {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 11px;
@@ -52,14 +52,14 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-
+ 
     .site-name:hover { color: var(--text-primary); }
-
+ 
     nav {
       display: flex;
       gap: 2rem;
     }
-
+ 
     nav a {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 11px;
@@ -71,76 +71,82 @@
       padding-bottom: 1px;
       transition: color 0.2s, border-color 0.2s;
     }
-
-    nav a:hover, nav a.active {
+ 
+    nav a:hover {
       color: var(--text-primary);
       border-color: var(--border);
     }
-
-    main {
-      max-width: 640px;
+ 
+    article {
+      max-width: 580px;
       margin: 0 auto;
       padding: 5rem 2rem 6rem;
     }
-
-    .page-label {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 3rem;
-    }
-
-    .essay-list {
-      list-style: none;
-    }
-
-    .essay-item {
-      padding: 2.5rem 0;
-      border-bottom: 0.5px solid var(--border);
-    }
-
-    .essay-item:first-child {
-      border-top: 0.5px solid var(--border);
-    }
-
-    .essay-date {
+ 
+    .essay-meta {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-tertiary);
-      margin-bottom: 0.75rem;
+      margin-bottom: 2rem;
     }
-
-    .essay-title {
-      font-size: clamp(1.3rem, 3vw, 1.65rem);
-      font-weight: 500;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      color: #18180f;
-    }
-
-    .essay-title a {
-      color: #18180f;
+ 
+    .essay-meta a {
+      color: var(--text-tertiary);
       text-decoration: none;
       transition: color 0.2s;
     }
-
-    .essay-title a:hover { color: var(--text-secondary); }
-
-    .essay-title em { font-style: italic; }
-
-    .essay-pull {
-      font-size: clamp(0.95rem, 2vw, 1.05rem);
-      font-style: italic;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
+ 
+    .essay-meta a:hover { color: var(--text-secondary); }
+ 
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 3rem;
+      color: #18180f;
     }
-
-    .essay-read {
+ 
+    .rule {
+      width: 1px;
+      height: 40px;
+      background: var(--text-tertiary);
+      margin: 0 0 3rem 0;
+      opacity: 0.3;
+    }
+ 
+    .essay-body p {
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 1.65em;
+    }
+ 
+    .essay-body p:last-child {
+      margin-bottom: 0;
+    }
+ 
+    .essay-body em { font-style: italic; }
+ 
+    .essay-body .closing {
+      color: var(--text-primary);
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+      line-height: 1.85;
+      margin-bottom: 1.65em;
+    }
+ 
+    .essay-footer {
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+ 
+    .back-link {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 10px;
       letter-spacing: 0.16em;
@@ -149,11 +155,18 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-
-    .essay-read:hover { color: var(--text-primary); }
-
+ 
+    .back-link:hover { color: var(--text-primary); }
+ 
+    .essay-copyright {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--text-tertiary);
+      opacity: 0.7;
+    }
+ 
     footer {
-      margin-top: 6rem;
       padding: 2.5rem 3rem;
       border-top: 0.5px solid var(--border);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -171,33 +184,62 @@
   <header class="site-header">
     <a href="../" class="site-name">Armarium Vitae</a>
     <nav>
-      <a href="./" class="active">Essays</a>
+      <a href="./">Essays</a>
       <a href="mailto:elizabeth@armariumvitae.com">Inquiries</a>
     </nav>
   </header>
-
-  <main>
-    <p class="page-label">Essays</p>
-
-    <ul class="essay-list">
-
-      <li class="essay-item">
-        <p class="essay-date">April 2026</p>
-        <h2 class="essay-title"><a href="sanctioned.html">Sanctioned</a></h2>
-        <p class="essay-pull">The institution didn't hold theirs. That betrayal is real. Grieve it if you need to. But do not let it become a waiting room.</p>
-        <a href="sanctioned.html" class="essay-read">Read &rarr;</a>
-      </li>
-
-      <li class="essay-item">
-        <p class="essay-date">April 2026</p>
-        <h2 class="essay-title"><a href="i-will-not-go-quietly.html"><em>I Will Not Go Quietly</em></a></h2>
-        <p class="essay-pull">The city is always under siege. The question is always the same: is anyone coming? And the answer has always depended entirely on whether someone, somewhere, decided to ride.</p>
-        <a href="i-will-not-go-quietly.html" class="essay-read">Read &rarr;</a>
-      </li>
-
-    </ul>
-  </main>
-
+ 
+  <article>
+    <p class="essay-meta"><a href="./">Essays</a> &nbsp;&middot;&nbsp; April 2026</p>
+    <h1>Sanctioned</h1>
+    <div class="rule"></div>
+ 
+    <div class="essay-body">
+      <p>On April 16, 2026, a woman posted something on X that most people scrolled past. Her stepfather lost his job at Verizon. Ten years. Master's degree from Fordham. Data scientist. He has applied everywhere. He cannot find work. He did everything right. The degree. The work. The loans. The decades of showing up. He held his end of the covenant.</p>
+ 
+      <p>The institution didn't hold theirs.</p>
+ 
+      <p>That betrayal is real. Grieve it if you need to. But do not let it become a waiting room. Because history has something to say about what happens to talented people the empire stops investing in — and it is not what the empire expects.</p>
+ 
+      <p>Consider what sanctions did to Iran.</p>
+ 
+      <p>Locked out of Western arms markets for decades, Iranian engineers could not buy capability off the shelf. So they did something the Pentagon had stopped doing: they understood the physics from scratch. The result was the Shahed-136 — a $20,000 one-way attack drone, cheap enough to produce by the thousands, devastating enough to change the cost-exchange ratio of modern warfare. It did not need to match American platforms. It only needed to beat the assumptions.</p>
+ 
+      <p>America's response, fifteen years late, was to reverse-engineer it. The Pentagon's LUCAS drone — $35,000, built by copying the Shahed — is now in active combat service. The institution quietly rebuilt itself on what it had dismissed. No acknowledgment. No irony detected.</p>
+ 
+      <p>The Reaper that couldn't adapt costs $30 million a copy.</p>
+ 
+      <p>The Reaper wasn't badly built. It was built for a world that no longer exists.</p>
+ 
+      <p>So were you — or so the institution has decided.</p>
+ 
+      <p>You know what the gravitational pull feels like. One more application. One more certification. One more LinkedIn optimization. One more reaching out to someone who used to return your calls. You are performing your credentials at an institution that has already made its decision about you — and every month you spend in that waiting room is a month you are not building the thing only you can build.</p>
+ 
+      <p>This is what the sanctioned do wrong at first. Iran spent years trying to buy its way back to legitimacy before necessity forced the pivot. The pivot was the gift.</p>
+ 
+      <p>You have domain expertise the institution no longer wants to pay for. You have time you did not choose but now possess. You have the painful clarity that the old path is closed — which is the same clarity that forced Iranian engineers to stop asking permission and start studying wreckage.</p>
+ 
+      <p>That clarity is not a consolation prize. It is a forcing function.</p>
+ 
+      <p>The people who come out of this as something new are not the ones who were most talented in the room. They are the ones who stopped trying to get back in the building first. Who took the severance and the wound and the freed-up cognitive bandwidth and asked a different question entirely — not <em>who will hire me</em> but <em>what does the world look like if the assumptions that discarded me are wrong.</em></p>
+ 
+      <p>Not what can I build into the existing order. What becomes possible at the edge of it. What the institution cannot imagine because it is too invested in yesterday to see tomorrow coming.</p>
+ 
+      <p>Iran did not survive by becoming America. It survived by becoming something America's doctrine had no category for. Whether that story ends in Iranian triumph or catastrophe is still being written. But the proof of concept is already in the field — and the field is LUCAS.</p>
+ 
+      <p>You are being handed the same invitation. It does not feel like one yet. It will.</p>
+ 
+      <p class="closing">Stop sending the application. Start studying the wreckage.</p>
+ 
+      <p class="closing">Someone is coming. It might as well be you.</p>
+    </div>
+ 
+    <div class="essay-footer">
+      <a href="./" class="back-link">&larr; All Essays</a>
+      <span class="essay-copyright">&copy; Elizabeth Burdine 2026</span>
+    </div>
+  </article>
+ 
   <footer>
     &copy; Elizabeth Burdine 2026 &nbsp;&middot;&nbsp; Dallas, Texas
   </footer>
