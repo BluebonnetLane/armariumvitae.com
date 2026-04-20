@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm So Right I'm Wrong — Armarium Vitae</title>
+  <meta name="description" content="Palantir isn't just reading the world. It's writing it. And we were not asked.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text-primary: #1a1a18;
+      --text-secondary: #5a5a54;
+      --text-tertiary: #9a9a92;
+      --border: rgba(0,0,0,0.12);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-primary: #f0ede6;
+        --text-secondary: #a8a49c;
+        --text-tertiary: #6a6660;
+        --border: rgba(255,255,255,0.12);
+      }
+      body { background: #141412; }
+    }
+
+    body {
+      background: #faf9f6;
+      color: var(--text-primary);
+      font-family: 'EB Garamond', Georgia, serif;
+      min-height: 100vh;
+    }
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2.5rem 3rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .site-name {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .site-name:hover { color: var(--text-primary); }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      border-bottom: 0.5px solid transparent;
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+      border-color: var(--border);
+    }
+
+    article {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+    }
+
+    .essay-meta {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 2rem;
+    }
+
+    .essay-meta a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .essay-meta a:hover { color: var(--text-secondary); }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 3rem;
+      color: #18180f;
+    }
+
+    .rule {
+      width: 1px;
+      height: 40px;
+      background: var(--text-tertiary);
+      margin: 0 0 3rem 0;
+      opacity: 0.3;
+    }
+
+    .essay-body p {
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+      line-height: 1.85;
+      color: #000000;
+      margin-bottom: 1.65em;
+    }
+
+    .essay-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .essay-body em { font-style: italic; }
+
+    .essay-body .section-break {
+      text-align: center;
+      color: var(--text-tertiary);
+      margin: 2.5em 0;
+      font-size: 0.9rem;
+      letter-spacing: 0.3em;
+      opacity: 0.4;
+    }
+
+    .essay-body .closing {
+      color: #000000;
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+      line-height: 1.85;
+      margin-bottom: 1.65em;
+    }
+
+    .essay-footer {
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-link {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--text-primary); }
+
+    .essay-copyright {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--text-tertiary);
+      opacity: 0.7;
+    }
+
+    footer {
+      padding: 2.5rem 3rem;
+      border-top: 0.5px solid var(--border);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      text-align: center;
+      opacity: 0.55;
+      line-height: 2;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="site-name">Armarium Vitae</a>
+    <nav>
+      <a href="/essays/">Essays</a>
+    </nav>
+  </header>
+
+  <article>
+    <p class="essay-meta"><a href="/essays/">Essays</a> &nbsp;&middot;&nbsp; April 2026</p>
+    <h1>I'm So Right I'm Wrong</h1>
+    <div class="rule"></div>
+
+    <div class="essay-body">
+      <p>I read the Palantir manifesto and felt the uncomfortable click of recognition — not agreement, but the worse thing. Comprehension. I understood the architecture. I could see why intelligent people built it and why other intelligent people signed the contracts and why the governments lined up and why the logic holds together all the way down.</p>
+
+      <p>That's the problem with Schmittianism in a hoodie. It's not crazy. It's not even wrong, exactly. It's a complete cosmology — the world as permanent conflict, democratic deliberation as exploitable weakness, the private technological elite as the only honest actors left because they're the only ones willing to say what everyone else is performing not to know.</p>
+
+      <p>If you accept the first premise, the rest follows.</p>
+
+      <p>The first premise is that defection is the world's permanent truth. That cooperators are either naive or lying. That the only question is whether the strong will be honest about what they're doing.</p>
+
+      <p>I have spent a lifetime studying that premise. I just didn't know it at the time. I imbibed the evidence. I have felt its pull.</p>
+
+      <p>And I think it is the most dangerous idea in circulation today — not because it's false, but because it's a self-fulfilling architecture. Build the world as if defection is permanent and you will not be wrong for long.</p>
+
+      <p class="section-break">&#x2731;</p>
+
+      <p>A brief taxonomy, because it matters — and because Ben Hunt at Epsilon Theory mapped it better than anyone.</p>
+
+      <p>Cooperators build. They share. They create systems that generate more value than they extract, that leave the people they touch better than they found them. They bet on the possibility that the other party will also cooperate — and they understand that this bet, made consistently and at scale, is what civilization actually is.</p>
+
+      <p>Defectors extract. They optimize for personal or institutional advantage within a system they did not build and do not intend to maintain. They are not always villains. Sometimes they are simply people who have decided, quietly or loudly, that the system isn't worth preserving — or that someone else will preserve it while they take what's available.</p>
+
+      <p>The critical insight — the one Epsilon Theory identified and history confirms — is that defection is contagious. One defector in a cooperative system doesn't just take their share. They change the calculus for everyone watching. They make cooperation look like naivety. They recruit, without trying, simply by succeeding.</p>
+
+      <p>This is why the question of who builds the infrastructure of power is never just a technical question. It is always a moral one. The infrastructure encodes the assumptions of its builders. And right now, the infrastructure of sovereignty is being built by people who have concluded that defection is the world's permanent truth.</p>
+
+      <p>Palantir isn't just reading the world. It's writing it.</p>
+
+      <p class="section-break">&#x2731;</p>
+
+      <p>Here is what makes this so difficult to argue against cleanly.</p>
+
+      <p>Palantir's CTO has said publicly that the covenant between American workers and American institutions was broken in the 1970s — not by technology, but by policy choices that stripped workers of power. He's right. That betrayal is real and documented and its consequences are still compounding. The man at Verizon with the Fordham master's degree and ten years of service who cannot find work — Palantir's own executive would name his wound correctly.</p>
+
+      <p>Palantir knows the covenant was broken.</p>
+
+      <p>What Palantir has decided is that the answer is not to repair it.</p>
+
+      <p>The answer, encoded in every contract and every system they build, is to construct something that makes the covenant permanently unnecessary. Not to restore the bargain between worker and institution. To build infrastructure so total, so technically indispensable, so deeply embedded in the sovereign functions of states, that the question of what citizens deserve from their institutions becomes category error. You don't negotiate with the weather. You adapt to it or you don't.</p>
+
+      <p>This is not repair. This is annexation.</p>
+
+      <p>Palantir has looked at the hollowed-out covenant and concluded that the hollowing was inevitable — which is the Schmittian move, the oldest move, the move that renders every objection indecent. Of course the covenant failed. Covenants always fail. The strong have always known this. Only the naive believed otherwise.</p>
+
+      <p>But the covenant didn't fail because cooperation is impossible. It failed because enough people with enough power decided to defect from it — and then built systems that made their defection look like realism.</p>
+
+      <p>Palantir is building the next layer of those systems. More elegant. More total. Philosophically justified in advance.</p>
+
+      <p class="section-break">&#x2731;</p>
+
+      <p>The manifesto calls this saving the West.</p>
+
+      <p>I want to be precise about what the West actually is — not as sentiment but as architecture. The West, at its best, is the accumulated argument that power must answer to something outside itself. That the sovereign is not the final word. That there exists a standard — call it natural law, call it constitutional order, call it the dignity of the person — against which the exercise of power can be judged and found wanting.</p>
+
+      <p>That argument was never easy to maintain. It required institutions, and institutions require people willing to staff them honestly, and honest staffing requires a culture that rewards integrity over compliance. We have been losing that culture for decades, choice by choice, each substitution small enough to seem reasonable.</p>
+
+      <p>What Palantir offers is a different answer to that loss. Stop trying to maintain the culture. Build systems robust enough that the culture doesn't matter. Replace the fragile covenant with elegant infrastructure. Trust the engineers.</p>
+
+      <p>But the engineers answer to shareholders. And the shareholders answer to returns. And returns, in a world of permanent conflict, flow to whoever is most useful to the people making the decisions about enemies.</p>
+
+      <p>The Palantir orbs in Tolkien's world were instruments of falsification. They offered partial revelations. They misled those who gazed into them — not through malfunction but through design. The one who controlled the network controlled what each viewer saw as truth.</p>
+
+      <p>Thiel named his company after them and called it irony.</p>
+
+      <p>I'm not sure it was.</p>
+
+      <p class="section-break">&#x2731;</p>
+
+      <p>So here is where I am so right I'm wrong.</p>
+
+      <p>Everything in the Palantir critique lands. The Schmitt identification is accurate. The privatization of sovereignty is real. The inevitability sleight of hand is their primary rhetorical weapon and it works because it's partially true — someone will build these systems, and better Palantir than a worse actor, and the logic cascades from there until you're signing the contract.</p>
+
+      <p>And yet.</p>
+
+      <p>The cooperators have always known that the defectors' analysis of the world is not entirely wrong. The Schmittian is correct that conflict exists. Correct that naive pluralism can be exploited. Correct that the strong must sometimes act before the deliberation is finished.</p>
+
+      <p>Where the Schmittian fails — where Palantir fails — is in mistaking a recurring feature of the world for its permanent truth. Conflict exists. So does cooperation. Both are contagious. The question is not which one is real. The question is which one you build toward.</p>
+
+      <p>Palantir has chosen. They have chosen coherently, philosophically, with full awareness of what they are doing. They are not confused. They are not naive. They have looked at the broken covenant and the hollowed institutions and the graveyard of almost-civilizations and concluded that the answer is infrastructure rather than repair.</p>
+
+      <p>I think they are wrong in a way that will not become visible until it is very difficult to reverse.</p>
+
+      <p>The covenant was worth repairing. The institutions were worth staffing honestly. The fragile, slow, frustrating process of democratic deliberation was worth defending — not because it always works, but because it is the only system ever devised that contains within itself the mechanism for correcting its own failures.</p>
+
+      <p>Palantir's system contains no such mechanism. It contains only the assumptions of its builders.</p>
+
+      <p>And its builders have decided that defection is the world's permanent truth.</p>
+
+      <p>That decision, encoded in systems too embedded to remove, written into the sovereign functions of states that have long since stopped asking questions — that is the world they are building.</p>
+
+      <p>They are building it for us.</p>
+
+      <p>We did not vote on it.</p>
+
+      <p>We were not asked.</p>
+
+      <p class="section-break">&#x2731;</p>
+
+      <p class="closing">Stop sending the application. Start studying the wreckage.</p>
+
+      <p class="closing">But study it honestly. Including the wreckage being built right now, by very intelligent people, with very good intentions, who are so right they're wrong.</p>
+    </div>
+
+    <div class="essay-footer">
+      <a href="/essays/" class="back-link">&larr; All Essays</a>
+      <span class="essay-copyright">&copy; Elizabeth Burdine 2026</span>
+    </div>
+  </article>
+
+  <footer>
+    Dallas, Texas
+  </footer>
+</body>
+</html>
