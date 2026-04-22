@@ -1,2 +1,7 @@
 # armariumvitae.com
-A protected house for manuscripts, histories, and the stories that form boys into men — kept whole against fragmentation, offered forward to those who seek them.
+
+Manuscripts, histories, and the stories that form character. Kept whole against the drift.
+
+—
+
+Essays and long-form work by Elizabeth Burdine.
