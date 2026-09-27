@@ -1,70 +1,109 @@
+Here's the index.html code
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Essays — Armarium Vitae</title>
-  <meta name="description" content="Essays from Armarium Vitae — a repository of living things.">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
+  <title>Armarium Vitae</title>
+  <meta name="description" content="Manuscripts, histories, and the stories that form character. Kept whole against the drift.">
+  <meta property="og:title" content="Armarium Vitae">
+  <meta property="og:description" content="Manuscripts, histories, and the stories that form character. Kept whole against the drift.">
+  <meta property="og:image" content="https://armariumvitae.com/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    a { color: inherit; text-decoration: none; }
-
     :root {
+      --bg: #faf9f6;
       --text-primary: #1a1a18;
       --text-secondary: #5a5a54;
       --text-tertiary: #9a9a92;
+      --heading: #18180f;
       --border: rgba(0,0,0,0.12);
     }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --text-primary: #f0ede6;
-        --text-secondary: #a8a49c;
-        --text-tertiary: #6a6660;
-        --border: rgba(255,255,255,0.12);
-      }
-      body { background: #141412; }
-    }
-
     body {
-      background: #faf9f6;
+      background: var(--bg);
       color: var(--text-primary);
       font-family: 'EB Garamond', Georgia, serif;
       min-height: 100vh;
     }
-
-    .site-header {
+    main {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      padding: 2.5rem 3rem;
-      border-bottom: 0.5px solid var(--border);
+      justify-content: center;
+      padding: 4rem 2rem;
+      max-width: 640px;
+      width: 100%;
+      margin: 0 auto;
+      min-height: 100vh;
     }
-
-    .site-name {
+    .ornament {
+      width: 48px;
+      height: 1px;
+      background: var(--text-tertiary);
+      margin-bottom: 2.5rem;
+      opacity: 0.5;
+    }
+    .label {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 11px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--text-tertiary);
-      text-decoration: none;
-      transition: color 0.2s;
+      text-align: center;
+      margin-bottom: 2.5rem;
     }
-
-    .site-name:hover { color: var(--text-primary); }
-
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 500;
+      text-align: center;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      color: var(--heading);
+    }
+    h1 em { font-style: italic; }
+    .rule {
+      width: 1px;
+      height: 48px;
+      background: var(--text-tertiary);
+      margin: 2rem auto;
+      opacity: 0.3;
+    }
+    .tagline {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      text-align: center;
+      color: var(--text-primary);
+      line-height: 1.7;
+      margin-bottom: 0.6rem;
+    }
+    .tagline:last-of-type {
+      margin-bottom: 3.5rem;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      max-width: 340px;
+      margin-bottom: 3rem;
+    }
+    .divider-line {
+      flex: 1;
+      height: 0.5px;
+      background: var(--border);
+    }
+    .divider-glyph {
+      font-size: 14px;
+      color: var(--text-tertiary);
+    }
     nav {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
     }
-
     nav a {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 11px;
@@ -76,88 +115,28 @@
       padding-bottom: 1px;
       transition: color 0.2s, border-color 0.2s;
     }
-
-    nav a:hover, nav a.active {
+    nav a:hover {
       color: var(--text-primary);
       border-color: var(--border);
     }
-
-    main {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 5rem 2rem 6rem;
-    }
-
-    .page-label {
+    .contact {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.06em;
       color: var(--text-tertiary);
-      margin-bottom: 3rem;
+      text-align: center;
+      margin-bottom: 2rem;
     }
-
-    .essay-list { list-style: none; }
-
-    .essay-item {
-      padding: 2.5rem 0;
-      border-bottom: 0.5px solid var(--border);
-    }
-
-    .essay-item:first-child {
-      border-top: 0.5px solid var(--border);
-    }
-
-    .essay-date {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 0.75rem;
-    }
-
-    .essay-title {
-      font-size: clamp(1.3rem, 3vw, 1.65rem);
-      font-weight: 500;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      color: #18180f;
-    }
-
-    .essay-title a {
-      color: #18180f;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .essay-title a:hover { color: var(--text-secondary); }
-    .essay-title em { font-style: italic; }
-
-    .essay-pull {
-      font-size: clamp(0.95rem, 2vw, 1.05rem);
-      font-style: italic;
+    .contact a {
       color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-    }
-
-    .essay-read {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
       text-decoration: none;
+      border-bottom: 0.5px solid var(--border);
+      padding-bottom: 1px;
       transition: color 0.2s;
     }
-
-    .essay-read:hover { color: #18180f; }
-
+    .contact a:hover { color: var(--text-primary); }
     footer {
-      margin-top: 6rem;
-      padding: 2.5rem 3rem;
-      border-top: 0.5px solid var(--border);
+      margin-top: 2rem;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 10px;
       letter-spacing: 0.18em;
@@ -170,50 +149,26 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <a href="/" class="site-name">Armarium Vitae</a>
-    <nav>
-      <a href="./" class="active">Essays</a>
-    </nav>
-  </header>
-
   <main>
-    <p class="page-label">Essays</p>
-    <ul class="essay-list">
-
-      <li class="essay-item">
-        <p class="essay-date">May 2026</p>
-        <h2 class="essay-title"><a href="/essays/the-voices-we-did-not-keep.html">The Voices We Did Not Keep</a></h2>
-        <p class="essay-pull">A church can correct any departure from the standard it holds. It cannot correct the departure of the standard.</p>
-        <a href="/essays/the-voices-we-did-not-keep.html" class="essay-read">Read &rarr;</a>
-      </li>
-
-      <li class="essay-item">
-        <p class="essay-date">April 2026</p>
-        <h2 class="essay-title"><a href="/essays/im-so-right-im-wrong.html">I'm So Right I'm Wrong</a></h2>
-        <p class="essay-pull">Palantir isn't just reading the world. It's writing it. And we were not asked.</p>
-        <a href="/essays/im-so-right-im-wrong.html" class="essay-read">Read &rarr;</a>
-      </li>
-
-      <li class="essay-item">
-        <p class="essay-date">April 2026</p>
-        <h2 class="essay-title"><a href="/essays/sanctioned.html">Sanctioned</a></h2>
-        <p class="essay-pull">The institution didn't hold theirs. That betrayal is real. Grieve it if you need to. But do not let it become a waiting room.</p>
-        <a href="/essays/sanctioned.html" class="essay-read">Read &rarr;</a>
-      </li>
-
-      <li class="essay-item">
-        <p class="essay-date">April 2026</p>
-        <h2 class="essay-title"><a href="/essays/i-will-not-go-quietly.html"><em>I Will Not Go Quietly</em></a></h2>
-        <p class="essay-pull">The city is always under siege. The question is always the same: is anyone coming? And the answer has always depended entirely on whether someone, somewhere, decided to ride.</p>
-        <a href="/essays/i-will-not-go-quietly.html" class="essay-read">Read &rarr;</a>
-      </li>
-
-    </ul>
+    <div class="ornament"></div>
+    <p class="label">Armarium Vitae</p>
+    <h1>Armarium Vitae</h1>
+    <div class="rule"></div>
+    <p class="tagline">Manuscripts, histories, and the stories that form character.</p>
+    <p class="tagline">Kept whole against the drift.</p>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <span class="divider-glyph">✦</span>
+      <div class="divider-line"></div>
+    </div>
+    <nav>
+      <a href="essays/">Essays</a>
+    </nav>
+    <p class="contact"><a href="mailto:elizabeth@armariumvitae.com">elizabeth@armariumvitae.com</a></p>
+    <footer>
+      Est. MMXXVI &nbsp;&middot;&nbsp; Dallas, Texas<br>
+      &copy; Elizabeth Burdine 2026
+    </footer>
   </main>
-
-  <footer>
-    &copy; Elizabeth Burdine 2026 &nbsp;&middot;&nbsp; Dallas, Texas
-  </footer>
 </body>
 </html>
